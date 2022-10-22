@@ -15,34 +15,40 @@ class Frequency {
 
         int FreqCount[];
 
-        FreqCount = new int[l - 1];
-
+        FreqCount = new int[l];
+        
         int i, j;
 
+        for (i=0;i<l;i++)
+            FreqCount[i]=1;
+
+
         for (i = 0; i <= l - 1; i++) {
+            //x=Word[i]
 
-            FreqCount[i] = 1;
+            for (j = i + 1; j <l; j++) {
 
-            for (j = i + 1; j <= l - 1; j++) {
-
-                if (FreqCount[j] != 0) {
+                if (FreqCount[i]!=-1) {
 
                     if (Word.charAt(i) == Word.charAt(j)) {
                         FreqCount[i]++;
-                        FreqCount[j] = 0;
+                        FreqCount[j] = -1;
                     }
+
+                    if (Word.charAt(i)==' ')
+                        FreqCount[i]=-1;
+
                 }
 
             }
         }
 
-        for (i = 0; i < l; i++) {
+        for (i=0;i<l;i++){
 
-            if (FreqCount[i] != 0 || Word.charAt(i) != ' ') {
-                System.out.println(Word.charAt(i) + " -> " + FreqCount[i]);
-            }
+            if (FreqCount[i]!=-1)
+                System.out.println(Word.charAt(i)+"->"+FreqCount[i]);
+
         }
-
     }
 
 }
