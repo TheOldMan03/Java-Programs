@@ -29,9 +29,7 @@ class GarCol{
         System.out.println("The Memory used :"+(mem1-mem2));
 
         //Deallocating Memory
-        for(i=0;i<10000;i++){
-            Numbers[i]=null;
-        } 
+        Numbers=null;
 
         gfg.gc();
 
