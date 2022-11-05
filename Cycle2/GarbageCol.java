@@ -1,5 +1,3 @@
-import javax.lang.model.type.NullType;
-
 class GarCol{
 
     public static void main(String args[]){
