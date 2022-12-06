@@ -88,7 +88,7 @@ class DoublyLinkedList{
             int i=1;
             right=head;
 
-            while(i!=pos-1){
+            while(i!=pos){
                 right=right.next;
                 left=right.prev;
 
@@ -111,8 +111,6 @@ class DoublyLinkedList{
         }
     }
 
-
-
     public void Display(){
 
         if (head==null){
@@ -131,6 +129,38 @@ class DoublyLinkedList{
             System.out.println(ptr.data);
         }
     }
+
+    public void Delete(int elem){
+
+        Node ptr=head;
+        int flag=0;
+
+        while(ptr!=null){
+
+            if (ptr.data==elem){
+
+                System.out.println("Element "+elem+" is deleted");
+
+                (ptr.prev).next=ptr.next;
+                (ptr.next).prev=ptr.prev;
+                //Linking after deleting
+
+                ptr.prev=null;
+                ptr.next=null;
+
+                flag=1;
+                break;
+                //JVM will automatically free the memory by GC
+            }
+
+            ptr=ptr.next;
+        }
+
+        if (flag==0){
+            System.out.println("Elememt "+elem+" is not found");
+        }
+
+    }
 }
 
 class Demo{
@@ -145,6 +175,11 @@ class Demo{
         DLL.Display();
 
         DLL.InsertAny(5, 3);
+        DLL.Display();
+
+        DLL.Delete(3);
+        DLL.Delete(0);
+
         DLL.Display();
         
     }
