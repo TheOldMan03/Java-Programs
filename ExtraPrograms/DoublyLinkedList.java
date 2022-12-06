@@ -15,7 +15,7 @@ class DoublyLinkedList{
 
     private Node head=null;
     private Node tail=null;
-    private int count=1; //It tells how many elements are there in the List
+    private int count=0; //It tells how many elements are there in the List
 
     public void InsertAtFront(int elem){
 
@@ -172,6 +172,7 @@ class Demo{
         DLL.InsertAtFront(3);
         DLL.InsertAtFront(4);
         DLL.InsertAtFront(6);
+        DLL.InsertAtBack(100);
         DLL.Display();
 
         DLL.InsertAny(5, 3);
