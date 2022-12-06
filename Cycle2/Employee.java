@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Employee{
 	
-	private String name;
+	String name;
 	int age;
 	String Phone;
 	String Address;
@@ -22,6 +22,8 @@ class Employee{
 	}
 	
 	void DisplayEmployee(){
+		
+		system.out.println();
 		
 		System.out.println("Name= "+name);
 		System.out.println("Age= "+age);
@@ -86,9 +88,9 @@ class Emp{
 
 				System.out.print("Enter your Choice: ");
 				int choice=r.nextInt();
-
-				if (choice==1){
-
+				
+				if (choice==1 || choice==2 || choice==3){
+				
 					System.out.println("Enter the Employee Details");
 					System.out.println();
 
@@ -108,75 +110,37 @@ class Emp{
 
 					System.out.print("Enter your Salary: ");
 					int sal=r.nextInt();
+				
+				
 
-					Employee e=new Employee(name, age, phone, addr, sal);
-					e.DisplayEmployee();
-					
-					
-				}
+					if (choice==1){
 
-				else if (choice==2){
+						Employee e=new Employee(name, age, phone, addr, sal);
+						e.DisplayEmployee();
+					}
 
-					System.out.println("Enter the Manager Details");
-					System.out.println();
+					else if (choice==2){
 
-					System.out.print("Enter your Name: ");
-					r.nextLine();
-					String name=r.nextLine();
+						System.out.print("Enter your Specialization: ");
+						r.nextLine();
+						String spec=r.nextLine();
 
-					System.out.print("Enter your Age: ");
-					int age=r.nextInt();
+						Manager m=new Manager(name, age, phone, addr, sal, spec);
+						m.DisplayManager();
+						System.out.println();
+					}
 
-					System.out.print("Enter your Phone Number: ");
-					r.nextLine();
-					String phone=r.nextLine();
+					else if (choice==3){
 
-					System.out.print("Enter your Address: ");
-					String addr=r.nextLine();
+						System.out.print("Enter your Department: ");
+						r.nextLine();
+						String spec=r.nextLine();
 
-					System.out.print("Enter your Salary: ");
-					int sal=r.nextInt();
-
-					System.out.print("Enter your Department: ");
-					r.nextLine();
-					String dept=r.nextLine();
-
-					Manager m=new Manager(name, age, phone, addr, sal, dept);
-					m.DisplayManager();
-					System.out.println();
-
-				}
-
-				else if (choice==3){
-
-					System.out.println("Enter the Officer Details");
-					System.out.println();
-
-					System.out.print("Enter your Name: ");
-					r.nextLine();
-					String name=r.nextLine();
-
-					System.out.print("Enter your Age: ");
-					int age=r.nextInt();
-
-					System.out.print("Enter your Phone Number: ");
-					r.nextLine();
-					String phone=r.nextLine();
-
-					System.out.print("Enter your Address: ");
-					r.nextLine();
-					String addr=r.nextLine();
-
-					System.out.print("Enter your Salary: ");
-					int sal=r.nextInt();
-
-					System.out.print("Enter your Department: ");
-					r.nextLine();
-					String spec=r.nextLine();
-
-					Officer o=new Officer(name, age, phone, addr, sal,spec);
-					o.DisplayOfficer();
-					System.out.println();
+						Officer o=new Officer(name, age, phone, addr, sal,spec);
+						o.DisplayOfficer();
+						System.out.println();
+					}
+				
 				}
 
 				else if (choice==4){
@@ -188,8 +152,7 @@ class Emp{
 					System.out.println();
 				}
 
-			}
-
-		}
-}
+			} //While
+		}//psvm
+}//class
 
