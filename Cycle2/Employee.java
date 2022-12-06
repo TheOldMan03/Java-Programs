@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Employee{
 	
-	String name;
+	private String name;
 	int age;
 	String Phone;
 	String Address;
